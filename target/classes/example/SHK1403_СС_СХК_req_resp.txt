@@ -1,0 +1,31 @@
+СС СХК
+обновляется информация файла, перед его регистрацией в ОС Досье ФЛ
+
+Удаление даты окончания хранения файла
+>> Path: DELETE https://ts-ecm-mtls.rs1-genr01-tsec-omnitech-oc-psi.apps.rs1-genr01.test.vtb.ru/files-info/f83dc104-0cbc-4072-a9bb-7f0ff70f6472/expiration-date 
+>> Params: {} 
+>> Headers: {"Authorization":"Bearer ***"} 
+>> Body: [empty]
+
+<< Path: 200 DELETE https://ts-ecm-mtls.rs1-genr01-tsec-omnitech-oc-psi.apps.rs1-genr01.test.vtb.ru/files-info/f83dc104-0cbc-4072-a9bb-7f0ff70f6472/expiration-date 
+<< Headers: {"date":"Tue, 27 Sep 2022 06:21:26 GMT","server":"istio-envoy","expires":"0","x-envoy-upstream-service-time":"41","transfer-encoding":"chunked","x-content-type-options":"nosniff","x-xss-protection":"1; mode=block","x-frame-options":"DENY","content-type":"application/json","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","strict-transport-security":"max-age=31536000 ; includeSubDomains"} 
+<< Body: {"uuid":"f83dc104-0cbc-4072-a9bb-7f0ff70f6472","name":"тигренок.jpg","sourceService":"sa_test_mprs@test.vtb.ru","ownerService":"sa_test_arrt@test.vtb.ru","bucket":"main","folder":"arrt","folderOwner":"sa_test_mprs@test.vtb.ru","folderUuid":"43a925e8-3d4b-42bf-a04d-b80b390d6c74","folders":[{"name":"arrt","uuid":"43a925e8-3d4b-42bf-a04d-b80b390d6c74","sourceService":"sa_test_mprs@test.vtb.ru","ownerService":"sa_test_mprs@test.vtb.ru"}],"versions":[],"type":"application/octet-stream","size":211436,"version":0,"uploadDate":"2022-09-27T06:21:26Z","hashSum":"35c808c52d6fd508d95e314f68c1e101170132e00818be752df0d0fcb7c2bf74","_links":{"self":{"href":"https://ts-ecm-mtls.rs1-genr01-tsec-omnitech-oc-psi.apps.rs1-genr01.test.vtb.ru/files-info/f83dc104-0cbc-4072-a9bb-7f0ff70f6472"}}}
+
+Перенос его в папку DOSE
+>> Path: PUT https://ts-ecm-mtls.rs1-genr01-tsec-omnitech-oc-psi.apps.rs1-genr01.test.vtb.ru/folder/DOSE/files?uuids=f83dc104-0cbc-4072-a9bb-7f0ff70f6472&folderOwner=dose_preprod%40test.vtb.ru 
+>> Params: {"uuids":"f83dc104-0cbc-4072-a9bb-7f0ff70f6472","folderOwner":"dose_preprod%40test.vtb.ru"} 
+>> Headers: {"Authorization":"Bearer ***"} 
+>> Body: [empty]
+
+<< Path: 204 PUT https://ts-ecm-mtls.rs1-genr01-tsec-omnitech-oc-psi.apps.rs1-genr01.test.vtb.ru/folder/DOSE/files?uuids=f83dc104-0cbc-4072-a9bb-7f0ff70f6472&folderOwner=dose_preprod%40test.vtb.ru 
+<< Headers: {"date":"Tue, 27 Sep 2022 06:21:27 GMT","server":"istio-envoy","expires":"0","x-envoy-upstream-service-time":"71","x-content-type-options":"nosniff","x-xss-protection":"1; mode=block","x-frame-options":"DENY","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","strict-transport-security":"max-age=31536000 ; includeSubDomains"} 
+
+Перенос Прав на файл в ОС Досье ФЛ
+>> Path: POST https://ts-ecm-mtls.rs1-genr01-tsec-omnitech-oc-psi.apps.rs1-genr01.test.vtb.ru/permission-sharings/transfer?serviceTo=dose_preprod%40test.vtb.ru&uuid=f83dc104-0cbc-4072-a9bb-7f0ff70f6472 
+>> Params: {"serviceTo":"dose_preprod%40test.vtb.ru","uuid":"f83dc104-0cbc-4072-a9bb-7f0ff70f6472"} 
+>> Headers: {"Authorization":"Bearer ***"} 
+>> Body: [empty]
+
+<< Path: 204 POST https://ts-ecm-mtls.rs1-genr01-tsec-omnitech-oc-psi.apps.rs1-genr01.test.vtb.ru/permission-sharings/transfer?serviceTo=dose_preprod%40test.vtb.ru&uuid=f83dc104-0cbc-4072-a9bb-7f0ff70f6472 
+<< Headers: {"date":"Tue, 27 Sep 2022 06:21:27 GMT","server":"istio-envoy","expires":"0","x-envoy-upstream-service-time":"31","x-content-type-options":"nosniff","x-xss-protection":"1; mode=block","x-frame-options":"DENY","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","strict-transport-security":"max-age=31536000 ; includeSubDomains"} 
+<< Body: 

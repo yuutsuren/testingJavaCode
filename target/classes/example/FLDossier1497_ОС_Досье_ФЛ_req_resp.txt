@@ -1,0 +1,22 @@
+ОС Досье ФЛ
+Поиск Досье во время запроса на поиск данных в ОС ПП ФЛ
+>> Path: POST https://epa-ig-rr-lb.test.vtb.ru/api/cross/dose/document-search-person/v1/find 
+>> Params: {} 
+>> Headers: {"Authorization":"Bearer ***","X-TYK-API-KEY":"***","Content-Length":"154","Content-Type":"application/json"} 
+>> Body: {"requestId":"97f6fe1b-e884-4d6c-848c-553d16495d2f","partyUid":"1284379491","dossierVersion":"LAST","docTypeId":"3","documentNumber":"001405-BN-21092022"}
+
+<< Path: 200 POST https://epa-ig-rr-lb.test.vtb.ru/api/cross/dose/document-search-person/v1/find 
+<< Headers: {"date":"Tue, 27 Sep 2022 06:35:14 GMT","server":"nginx","expires":"0","x-ratelimit-limit":"-1","end-time":"null","jwt":"***","x-frame-options":"DENY","x-ratelimit-reset":"0","x-ratelimit-remaining":"0","pragma":"no-cache","strict-transport-security":"max-age=63072000; includeSubDomains; preload","set-cookie":"IG_JSESSIONID=2F541BB1D136B20781AA8EB07BA12269; Path=/; Secure; HttpOnly","x-content-type-options":"nosniff","x-xss-protection":"1; mode=block","content-type":"application/json","cache-control":"no-cache, no-store, max-age=0, must-revalidate"} 
+<< Body: {"requestId":"97f6fe1b-e884-4d6c-848c-553d16495d2f","errorCode":0,"errorDescription":"Успех"}
+
+Регистрация данных в ОС Досье ФЛ
+Производится во время регистрации любых данных в ОС ПП ФЛ
+
+>> Path: POST https://epa-ig-rr-lb.test.vtb.ru/api/cross/dose/checkin-universal-person/v1/register 
+>> Params: {} 
+>> Headers: {"Authorization":"Bearer ***","X-TYK-API-KEY":"***","Content-Length":"578","Content-Type":"application/json"} 
+>> Body: {"requestId":"35f1f72a-3a32-42c0-bd31-316b1fe19770","systemCode":"arrt","partyUid":"1284396286","dossierVersion":"FINAL","docTypeId":"26","documentSubType":"26.15","managerNum":"VTB4061184","manager":"А**** В***ов М***ич","documentNumber":"555111222","documentDate":"2022-09-19","documentCreated":"****-09-27T06:21:26","uuidEmc":"f83dc104-0cbc-4072-a9bb-7f0ff70f6472","officeCode":"2429","parameters":[{"name":"DocumentNumber","value":"5551*****"},{"name":"DocumentState","value":"ДСТВ"},{"name":"DocumentDateExpired","value":"****-09-27"}]}
+
+<< Path: 200 POST https://epa-ig-rr-lb.test.vtb.ru/api/cross/dose/checkin-universal-person/v1/register 
+<< Headers: {"date":"Tue, 27 Sep 2022 06:21:28 GMT","server":"nginx","expires":"0","x-ratelimit-limit":"-1","end-time":"null","jwt":"***","x-frame-options":"DENY","x-ratelimit-reset":"0","x-ratelimit-remaining":"0","pragma":"no-cache","strict-transport-security":"max-age=63072000; includeSubDomains; preload","set-cookie":"IG_JSESSIONID=3F32BCC750EB0E06598DB77C89ACF7EF; Path=/; Secure; HttpOnly","x-content-type-options":"nosniff","x-xss-protection":"1; mode=block","content-type":"application/json","cache-control":"no-cache, no-store, max-age=0, must-revalidate"} 
+<< Body: {"requestId":"35f1f72a-3a32-42c0-bd31-316b1fe19770","errorCode":0,"errorDescription":"Успех","documentDvId":"18601281-0576-4373-8498-7e8581055573"}

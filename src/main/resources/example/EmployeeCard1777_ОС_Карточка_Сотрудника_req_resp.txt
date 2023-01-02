@@ -1,0 +1,11 @@
+ОС Карточка сотрудника
+Запрашиваются данные для заполенения данных в Досье файла
+
+>> Path: GET https://epa-ig-rr-lb.test.vtb.ru/api/cross/bscs/v2/by-login/vtb4061184 
+>> Params: {} 
+>> Headers: {"Authorization":"Bearer ***","X-TYK-API-KEY":"***","Content-Type":"application/pdf"} 
+>> Body: [binary]
+
+<< Path: 200 GET https://epa-ig-rr-lb.test.vtb.ru/api/cross/bscs/v2/by-login/vtb4061184 
+<< Headers: {"bscs-response-token":"78DF646AA02D486493FBC69C1BBCE4A5","date":"Tue, 27 Sep 2022 06:21:28 GMT","server":"nginx","set-cookie":"IG_JSESSIONID=27B15B6A227A90CF1BFB1453EEE04B21; Path=/; Secure; HttpOnly","x-ratelimit-limit":"-1","end-time":"null","jwt":"tGzv3JOkF0XG5Qx2TlKWIA","content-type":"application/json","cache-control":"private","x-ratelimit-reset":"0","x-ratelimit-remaining":"0","strict-transport-security":"max-age=63072000; includeSubDomains; preload"} 
+<< Body: {"Employee":{"position":{"id":"50749714","fullName":"клиентский менеджер розничного бизнеса"},"department":{"id":"50343924","fullName":"Филиал Банка ВТБ в г.Москве","fullNameHierarchy":"Филиал № 7701 Банка ВТБ центральный\" в г. Москве","idHierarchy":"50286505::50343924"},"id":"70171313","firstName":"Арсен","patronymic":"Михайлович","lastName":"Вадимов","birthDate":"1980-01-01","snils":"","adLogin":"VTB4061184","email":"","pointOfSale":"ТЦ Оранжерея","chiefId":""}}
